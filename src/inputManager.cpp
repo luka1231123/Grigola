@@ -26,19 +26,23 @@ void inputManager::updateMouse(RenderWindow &window)
 {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
+        oldIsLeftPressed = isLeftPressed;
         isLeftPressed = true;
     }
     else
     {
+        oldIsLeftPressed = isLeftPressed;
         isLeftPressed = false;
     }
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
     {
+        oldIsRightPressed = isRightPressed;
         isRightPressed = true;
     }
     else
     {
+        oldIsRightPressed = isRightPressed;
         isRightPressed = false;
     }
     oldPos=pos;

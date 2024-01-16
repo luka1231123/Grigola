@@ -29,6 +29,10 @@ private:
 
     virtual void varUpdate(RenderWindow &window, inputManager &inp);
 
+    bool isMoving;
+
+    int xOffset;
+
     button titleBar;
 
     button closeButton;

@@ -28,7 +28,11 @@ public:
 
     bool isLeftPressed;
 
+    bool oldIsLeftPressed;
+
     bool isRightPressed;
+    
+    bool oldIsRightPressed;
 
     Vector2i getOldPos();
 

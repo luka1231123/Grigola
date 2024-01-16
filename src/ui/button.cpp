@@ -20,7 +20,7 @@ void button::update(Vector2i WindowPos, RenderWindow &window, inputManager &inp,
     button.setPosition(pos.x + WindowPos.x, pos.y + WindowPos.y);
 
 
-    if (isOpen && inp.isLeftPressed && inp.getPos().x > button.getPosition().x && inp.getPos().x < button.getPosition().x + width && inp.getPos().y > button.getPosition().y && inp.getPos().y < button.getPosition().y+height)
+    if (isOpen && inp.isLeftPressed && !inp.oldIsLeftPressed && inp.getPos().x > button.getPosition().x && inp.getPos().x < button.getPosition().x + width && inp.getPos().y > button.getPosition().y && inp.getPos().y < button.getPosition().y+height)
     {
         isClicked = true;
     }

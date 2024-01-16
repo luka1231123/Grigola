@@ -29,10 +29,17 @@ void relWindow::update(RenderWindow &window, inputManager &inp)
     {
         isOpen = false;
     }
-    if (titleBar.isClicked)
+    if (titleBar.isClicked && !isMoving)
     {
-        pos.x = pos.x + (inp.getPos().x - inp.getOldPos().x);
-        pos.y = pos.y + (inp.getPos().y - inp.getOldPos().y);
+        isMoving = true;
+        xOffset = relativeMouseLoc((inp)).x;
+    }
+    if(isMoving && inp.isLeftPressed)
+    {        
+        pos.x = inp.getPos().x-xOffset;
+        pos.y = inp.getPos().y+12;
+    }else{
+        isMoving = false;
     }
 }
 //ცვლილებადი
