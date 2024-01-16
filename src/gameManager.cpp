@@ -1,9 +1,5 @@
 #include "gameManager.hpp"
 
-using namespace sf;
-
-inputManager inp;
-
 void gameManager::run()
 {
 	init(window);
@@ -20,7 +16,9 @@ void gameManager::mainLoop(RenderWindow &window)
 	while (window.isOpen())
 	{
 		inp.processInput(window);
-		window.clear();
+		window.clear(sf::Color::Blue);
+		men.update(window, inp);
 		window.display();
+		if(!men.isOpen) window.close();
 	}
 }

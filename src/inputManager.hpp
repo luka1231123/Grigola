@@ -1,7 +1,7 @@
 #ifndef _inputManager_
 #define _inputManager_
 
-#include "gameManager.hpp"
+#include "includes.hpp"
 
 using namespace std;
 using namespace sf;
@@ -17,6 +17,10 @@ private:
 
     void updateMouse(RenderWindow &window);
 
+    Vector2i pos;
+
+    Vector2i oldPos;
+
 public:
     void processInput(RenderWindow &window);
 
@@ -26,7 +30,9 @@ public:
 
     bool isRightPressed;
 
-    Vector2i pos;
+    Vector2i getOldPos();
+
+    Vector2i getPos();
 };
 
 #endif

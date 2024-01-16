@@ -1,16 +1,9 @@
 #include "inputManager.hpp"
-#include "gameManager.hpp"
-
-using namespace sf;
-using namespace std;
-
-gameManager gm;
 
 void inputManager::processInput(RenderWindow &window)
 {
     sf::Event event;
     updateMouse(window);
-
     while (window.pollEvent(event))
     {
         switch (event.type)
@@ -48,8 +41,16 @@ void inputManager::updateMouse(RenderWindow &window)
     {
         isRightPressed = false;
     }
-
+    oldPos=pos;
     pos = sf::Mouse::getPosition(window);
+}
+Vector2i inputManager::getOldPos()
+{
+    return oldPos;
+}
+Vector2i inputManager::getPos()
+{
+    return pos;
 }
 
 void inputManager::handleKeyPress(sf::Keyboard::Key key)
