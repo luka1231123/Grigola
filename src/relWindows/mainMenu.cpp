@@ -10,12 +10,18 @@ mainMenu::mainMenu() : relWindow()
     //576 576, 448
     txt.init(22,L"მთავარი ფანჯარა",Vector2i(3,-26),pos);
     til.init("images/GrassPlain.png", "images/Cross.png", Vector2i(448,0),pos);
+    date.init(15,L"დრო", Vector2i(5,10), pos);
     //22 3 -26 დასამახსოვრებელი რიცხვებია.
     init();
 }
 
 void mainMenu::varUpdate(RenderWindow &window, inputManager &inp)
 {
+    wstring dro = L"დრო: ";
+    wstring dt = to_wstring((int)inp.timeSince.asSeconds());
+    dro = dro+dt;
+    date.contents=dro;
+    date.update(pos,window,inp,isOpen);
     txt.update(pos,window,inp,isOpen);
     for(int i=0;i<32;i++)
     {

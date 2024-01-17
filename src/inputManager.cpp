@@ -4,6 +4,7 @@ void inputManager::processInput(RenderWindow &window)
 {
     sf::Event event;
     updateMouse(window);
+    //Time tm = seconds(tickInterval);
     while (window.pollEvent(event))
     {
         switch (event.type)
@@ -20,6 +21,16 @@ void inputManager::processInput(RenderWindow &window)
         default:
             break;
         }
+    }
+    if (tm <= sf::Time::Zero)
+    {
+        // Do something for the game tick
+        //std::cout << "Game tick every 3 seconds!\n";
+        Tick = true;
+        // Reset the tick interval
+        tm = sf::seconds(tickInterval);
+    }else{
+        Tick=false;
     }
 }
 void inputManager::updateMouse(RenderWindow &window)
@@ -68,4 +79,17 @@ void inputManager::handleKeyRelease(sf::Keyboard::Key key)
 bool inputManager::isKeyPressed(sf::Keyboard::Key key) const
 {
     return pressedKeys.find(key) != pressedKeys.end();
+}
+bool inputManager::isTick()
+{
+    return Tick;
+}
+void inputManager::updateTime()
+{
+    
+    elapsed = clock.restart();
+    fps = 1.0f/elapsed.asSeconds();
+    oldTimeSince = timeSince;
+    timeSince += elapsed;
+    tm -= elapsed;
 }

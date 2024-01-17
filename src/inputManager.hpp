@@ -21,10 +21,21 @@ private:
 
     Vector2i oldPos;
 
+    bool Tick;
+
+    Time tm = seconds(0.0f);
+
+    Clock clock;
+
+    Time elapsed;
+
+
 public:
     void processInput(RenderWindow &window);
 
     bool isKeyPressed(sf::Keyboard::Key key) const;
+
+    void updateTime();
 
     bool isLeftPressed;
 
@@ -34,9 +45,19 @@ public:
     
     bool oldIsRightPressed;
 
+    float tickInterval = 3.0f;
+
+    Time timeSince;
+
+    float fps;
+
+    Time oldTimeSince;
+        
     Vector2i getOldPos();
 
     Vector2i getPos();
+    
+    bool isTick();
 };
 
 #endif

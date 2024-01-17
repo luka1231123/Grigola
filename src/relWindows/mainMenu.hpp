@@ -12,6 +12,7 @@ public:
 private:
     void varUpdate(RenderWindow &window, inputManager &inp) override;
     text txt;
+    text date;
     tile til;
 };
 

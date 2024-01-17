@@ -4,6 +4,7 @@
 #include "inputManager.hpp"
 #include "relWindows/mainMenu.hpp"
 #include "includes.hpp"
+#include "ui/text.hpp"
 
 class gameManager
 {
@@ -22,6 +23,8 @@ private:
 	inputManager inp;
 
 	mainMenu men;
+
+	text framerate;
 };
 
 #endif
