@@ -11,8 +11,8 @@ public:
     mainMenu();
 private:
     void varUpdate(RenderWindow &window, inputManager &inp) override;
-    button but;
     text txt;
+    tile til;
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "inputManager.hpp"
 #include "ui/button.hpp"
 #include "ui/text.hpp"
+#include "ui/tile.hpp"
 #include "includes.hpp"
 
 class relWindow
