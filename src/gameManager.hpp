@@ -1,8 +1,8 @@
 #ifndef _gameManager_
 #define _gameManager_
 
-#include "inputManager.hpp"
-#include "relWindows/mainMenu.hpp"
+#include "relWindows/windowManager.hpp"
+#include "gameWorld/gameWorldManager.hpp"
 #include "includes.hpp"
 #include "ui/text.hpp"
 
@@ -22,7 +22,9 @@ private:
 
 	inputManager inp;
 
-	mainMenu men;
+	windowManager winMan;
+
+	gameWorldManager gmMan;
 
 	text framerate;
 };

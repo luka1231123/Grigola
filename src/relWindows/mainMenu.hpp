@@ -1,9 +1,8 @@
 #ifndef _mainMenu_
 #define _mainMenu_
 
-#include "../relWindow.hpp"
+#include "relWindow.hpp"
 #include "../includes.hpp"
-#include "../inputManager.hpp"
 
 class mainMenu : public relWindow
 {
