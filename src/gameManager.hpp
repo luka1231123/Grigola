@@ -24,8 +24,6 @@ private:
 
 	windowManager winMan;
 
-	gameWorldManager gmMan;
-
 	text framerate;
 };
 

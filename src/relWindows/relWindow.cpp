@@ -42,7 +42,6 @@ void relWindow::update(RenderWindow &window, inputManager &inp)
         isMoving = false;
     }
 }
-//ცვლილებადი
 void relWindow::varUpdate(RenderWindow &window, inputManager &inp)
 {
 }

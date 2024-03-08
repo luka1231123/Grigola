@@ -2,19 +2,18 @@
 #define _gameWorldManager_
 
 #include "../includes.hpp"
-#include "Entity.hpp"
 #include "../ui/tile.hpp"
 
 class gameWorldManager
 {
 public:
-    Entity ent[200][200];
-    tile til[32][32];
-    void init();
-    void checks();
-    void updateTileMap();
+	
+	vector<vector<tile>>& getSegment(int rowStart, int rowEnd, int colStart, int colEnd);
+	static gameWorldManager& getInstance();
 private:
-    void moveFront();
+	gameWorldManager();
+	vector<vector<tile>> tileList;
+	static gameWorldManager instance;
 };
 
 #endif

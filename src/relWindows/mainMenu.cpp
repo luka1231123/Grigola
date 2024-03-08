@@ -9,8 +9,8 @@ mainMenu::mainMenu() : relWindow()
     pos.y = 300;
     //576 576, 448
     txt.init(22,L"მთავარი ფანჯარა",Vector2i(3,-26),pos);
-    til.init("images/GrassPlain.png", "images/Cross.png", Vector2i(448,0),pos);
     date.init(15,L"დრო", Vector2i(5,10), pos);
+    screenVec=gmWrMan.getSegment(0,32,0,32);
     //22 3 -26 დასამახსოვრებელი რიცხვებია.
     init();
 }
@@ -27,10 +27,10 @@ void mainMenu::varUpdate(RenderWindow &window, inputManager &inp)
     {
         for(int j=0;j<32;j++)
         {
-            til.update(pos,window,inp,isOpen);
-            til.pos = Vector2i(448+i*18,j*18);
+            
+            screenVec[i][j].AssignedPos = Vector2i(448+i*18,j*18);
+            screenVec[i][j].update(pos,window,inp,isOpen);
         }
-        
     }
     
 }

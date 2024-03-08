@@ -7,20 +7,15 @@
 class tile
 {
 public:
-    void init(string filename, string filenameFr, Vector2i AssignedPos, Vector2i WindowPos);
+    void init(string filename, string filenameFr);
 
     void update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen);
 
     void setFrontTexture(string filenameFr);
 
-    Vector2i pos;
-
     string filename;
-
+    Vector2i AssignedPos;
     string filenameFr;
-
-    Color color;
-    
 
 private:
     Sprite sp;

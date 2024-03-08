@@ -1,14 +1,12 @@
 #include "tile.hpp"
 
-void tile::init(string f, string ffr, Vector2i AssignedPos, Vector2i WindowPos)
+void tile::init(string f, string ffr)
 {
-    pos = Vector2i(AssignedPos.x, AssignedPos.y);
     if (!textureBack.loadFromFile(f))
     {
         //Nothing goes here...?
     }
     sp.setTexture(textureBack);
-    sp.setPosition(pos.x + WindowPos.x, pos.y + WindowPos.y);
     if(ffr!="")
     {
         if(!textureFront.loadFromFile(ffr))
@@ -16,7 +14,6 @@ void tile::init(string f, string ffr, Vector2i AssignedPos, Vector2i WindowPos)
             //skibidi
         }
         spFr.setTexture(textureFront);
-        spFr.setPosition(pos.x + WindowPos.x, pos.y + WindowPos.y);
     }
     filename = f;
     filenameFr = ffr;
@@ -24,8 +21,8 @@ void tile::init(string f, string ffr, Vector2i AssignedPos, Vector2i WindowPos)
 
 void tile::update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen)
 {   
-    sp.setPosition(pos.x + WindowPos.x, pos.y + WindowPos.y);
-    spFr.setPosition(pos.x + WindowPos.x, pos.y + WindowPos.y);
+    sp.setPosition(AssignedPos.x + WindowPos.x, AssignedPos.y + WindowPos.y);
+    spFr.setPosition(AssignedPos.x + WindowPos.x, AssignedPos.y + WindowPos.y);
     if(isOpen)
     {
         window.draw(sp);

@@ -8,6 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "inputManager.hpp"
 #include <thread>
+#include <list>
 
 using namespace std;
 using namespace sf; 
