@@ -9,7 +9,7 @@ class text
 public:
     void init(int fontSize, wstring c, Vector2i AssignedPos, Vector2i WindowPos);
 
-    void update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen);
+    void update(Vector2i WindowPos, RenderWindow &window, bool isOpen);
 
     Vector2i pos;
 
@@ -21,6 +21,8 @@ public:
 
 private:
     Text text;
+    
+    inputManager& inp = inputManager::getInstance();
     
     Font font;
 };

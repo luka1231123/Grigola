@@ -10,7 +10,7 @@ class button
 public:
     void init(int h, int w, Vector2i AssignedPos, Color cl, Vector2i WindowPos);
 
-    void update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen);
+    void update(Vector2i WindowPos, RenderWindow &window, bool isOpen);
 
     bool isHovered;
 
@@ -25,6 +25,8 @@ public:
     Color color;
 
 private:
+    inputManager& inp = inputManager::getInstance();
+    
     RectangleShape button;
 };
 

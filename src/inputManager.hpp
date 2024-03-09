@@ -29,8 +29,10 @@ private:
 
     Time elapsed;
 
-
+    static inputManager instance;
 public:
+    static inputManager& getInstance();
+
     void processInput(RenderWindow &window);
 
     bool isKeyPressed(sf::Keyboard::Key key) const;

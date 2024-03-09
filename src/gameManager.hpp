@@ -20,7 +20,7 @@ private:
 
 	void mainLoop(RenderWindow &Window);
 
-	inputManager inp;
+	inputManager& inp = inputManager::getInstance();
 
 	windowManager winMan;
 

@@ -7,7 +7,7 @@
 class windowManager
 {
 public:
-    void drawAndUpdate(RenderWindow &window, inputManager &inp);
+    void drawAndUpdate(RenderWindow &window);
 private:
     int onTop;
     mainMenu mm;

@@ -19,7 +19,7 @@ void tile::init(string f, string ffr)
     filenameFr = ffr;
 }
 
-void tile::update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen)
+void tile::update(Vector2i WindowPos, RenderWindow &window, bool isOpen)
 {   
     sp.setPosition(AssignedPos.x + WindowPos.x, AssignedPos.y + WindowPos.y);
     spFr.setPosition(AssignedPos.x + WindowPos.x, AssignedPos.y + WindowPos.y);

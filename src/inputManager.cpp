@@ -1,5 +1,12 @@
 #include "inputManager.hpp"
 
+inputManager inputManager::instance;
+
+inputManager& inputManager::getInstance()
+{
+    return instance;
+}
+
 void inputManager::processInput(RenderWindow &window)
 {
     sf::Event event;

@@ -19,15 +19,15 @@ public:
     
     bool isOpen;
 
-    void update(sf::RenderWindow &window, inputManager &inp);
+    void update(sf::RenderWindow &window);
 
-    sf::Vector2i relativeMouseLoc(inputManager &inp);
+    sf::Vector2i relativeMouseLoc();
 
     void init();
 
 private:
 
-    virtual void varUpdate(RenderWindow &window, inputManager &inp);
+    virtual void varUpdate(RenderWindow &window);
 
     bool isMoving;
 
@@ -38,6 +38,9 @@ private:
     button closeButton;
 
     sf::RectangleShape background;
+protected:
+
+    inputManager& inp = inputManager::getInstance();
 };
 
 #endif

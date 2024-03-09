@@ -11,7 +11,7 @@ class mainMenu : public relWindow
 public:
     mainMenu();
 private:
-    void varUpdate(RenderWindow &window, inputManager &inp) override;
+    void varUpdate(RenderWindow &window) override;
     gameWorldManager& gmWrMan = gameWorldManager::getInstance();
     text txt;
     vector<vector<tile>> screenVec;

@@ -12,7 +12,7 @@ void button::init(int h, int w, Vector2i AssignedPos, Color cl, Vector2i WindowP
     button.setPosition(pos.x + WindowPos.x, pos.y + WindowPos.y);
 }
 
-void button::update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen)
+void button::update(Vector2i WindowPos, RenderWindow &window, bool isOpen)
 {
     // run after init
     //pos = Vector2i(pos.x, pos.y);

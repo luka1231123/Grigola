@@ -13,7 +13,7 @@ void relWindow::init()
     closeButton.init(25, 25, Vector2i(width-25, -25), Color(175, 50, 50), pos);
 }
 
-void relWindow::update(RenderWindow &window, inputManager &inp)
+void relWindow::update(RenderWindow &window)
 {
     if(isOpen)
     {
@@ -22,9 +22,9 @@ void relWindow::update(RenderWindow &window, inputManager &inp)
     
     background.setPosition(pos.x, pos.y);
     background.setSize(Vector2f(width, height));
-    titleBar.update(pos, window, inp, isOpen);
-    closeButton.update(pos, window, inp, isOpen);
-    varUpdate(window,inp);
+    titleBar.update(pos, window, isOpen);
+    closeButton.update(pos, window, isOpen);
+    varUpdate(window);
     if (closeButton.isClicked)
     {
         isOpen = false;
@@ -32,7 +32,7 @@ void relWindow::update(RenderWindow &window, inputManager &inp)
     if (titleBar.isClicked && !isMoving)
     {
         isMoving = true;
-        xOffset = relativeMouseLoc((inp)).x;
+        xOffset = relativeMouseLoc().x;
     }
     if(isMoving && inp.isLeftPressed)
     {        
@@ -42,11 +42,11 @@ void relWindow::update(RenderWindow &window, inputManager &inp)
         isMoving = false;
     }
 }
-void relWindow::varUpdate(RenderWindow &window, inputManager &inp)
+void relWindow::varUpdate(RenderWindow &window)
 {
 }
 
-Vector2i relWindow::relativeMouseLoc(inputManager &inp)
+Vector2i relWindow::relativeMouseLoc()
 {
     Vector2i newPos;
     newPos.x = inp.getPos().x - background.getPosition().x;

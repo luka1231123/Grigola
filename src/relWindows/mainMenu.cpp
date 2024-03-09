@@ -15,21 +15,21 @@ mainMenu::mainMenu() : relWindow()
     init();
 }
 
-void mainMenu::varUpdate(RenderWindow &window, inputManager &inp)
+void mainMenu::varUpdate(RenderWindow &window)
 {
     wstring dro = L"დრო: ";
     wstring dt = to_wstring((int)inp.timeSince.asSeconds());
     dro = dro+dt;
     date.contents=dro;
-    date.update(pos,window,inp,isOpen);
-    txt.update(pos,window,inp,isOpen);
+    date.update(pos,window,isOpen);
+    txt.update(pos,window,isOpen);
     for(int i=0;i<32;i++)
     {
         for(int j=0;j<32;j++)
         {
             
             screenVec[i][j].AssignedPos = Vector2i(448+i*18,j*18);
-            screenVec[i][j].update(pos,window,inp,isOpen);
+            screenVec[i][j].update(pos,window,isOpen);
         }
     }
     

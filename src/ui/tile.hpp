@@ -9,7 +9,7 @@ class tile
 public:
     void init(string filename, string filenameFr);
 
-    void update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen);
+    void update(Vector2i WindowPos, RenderWindow &window, bool isOpen);
 
     void setFrontTexture(string filenameFr);
 

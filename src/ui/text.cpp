@@ -15,7 +15,7 @@ void text::init(int fontSize, wstring c, Vector2i AssignedPos, Vector2i WindowPo
     contents = c;
 }
 
-void text::update(Vector2i WindowPos, RenderWindow &window, inputManager &inp, bool isOpen)
+void text::update(Vector2i WindowPos, RenderWindow &window, bool isOpen)
 {
     // run after init
     //pos = Vector2i(pos.x, pos.y);

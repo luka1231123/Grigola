@@ -18,9 +18,9 @@ void gameManager::mainLoop(RenderWindow &window)
 	{
 		inp.processInput(window);
 		window.clear(sf::Color::Blue);
-		winMan.drawAndUpdate(window, inp);
+		winMan.drawAndUpdate(window);
 		framerate.contents = to_wstring((int)inp.fps);
-		framerate.update(Vector2i(0,0),window,inp,window.isOpen());
+		framerate.update(Vector2i(0,0),window,window.isOpen());
 		window.display();
 		inp.updateTime();
 		if(inp.isKeyPressed(sf::Keyboard::Escape))
