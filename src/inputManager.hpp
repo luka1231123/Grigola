@@ -47,7 +47,7 @@ public:
     
     bool oldIsRightPressed;
 
-    float tickInterval = 3.0f;
+    float tickInterval = 0.125f;
 
     Time timeSince;
 

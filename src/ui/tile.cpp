@@ -43,6 +43,15 @@ void tile::setFrontTexture(string f)
         {
             //skibidi
         }
-        spFr.setTexture(textureBack);
+        spFr.setTexture(textureFront);
     }
+}
+void tile::setBackTexture(string f)
+{
+    filename = f;
+    if(!textureBack.loadFromFile(f))
+    {
+        //skibidi
+    }
+    sp.setTexture(textureBack);
 }

@@ -13,11 +13,13 @@ public:
 
     void setFrontTexture(string filenameFr);
 
-    string filename;
+    void setBackTexture(string filename);
+
     Vector2i AssignedPos;
-    string filenameFr;
 
 private:
+    string filenameFr;
+    string filename;
     Sprite sp;
     Sprite spFr;
     Texture textureBack;

@@ -2,18 +2,20 @@
 #define _gameWorldManager_
 
 #include "../includes.hpp"
-#include "../ui/tile.hpp"
+#include "worldTile.hpp"
+
+//singleton
 
 class gameWorldManager
 {
 public:
-	
-	vector<vector<tile>>& getSegment(int rowStart, int rowEnd, int colStart, int colEnd);
 	static gameWorldManager& getInstance();
+	vector<vector<worldTile>> tileList;
+	queue<Keyboard::Key> inputLine;
 private:
 	gameWorldManager();
-	vector<vector<tile>> tileList;
 	static gameWorldManager instance;
+	inputManager& inp = inputManager::getInstance();
 };
 
 #endif

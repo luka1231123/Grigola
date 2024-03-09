@@ -3,19 +3,22 @@
 
 #include "relWindow.hpp"
 #include "../includes.hpp"
-#include "../gameWorld/gameWorldManager.hpp"
+#include "../gameWorld/camera.hpp"
 
 
 class mainMenu : public relWindow
 {
 public:
     mainMenu();
+    
 private:
     void varUpdate(RenderWindow &window) override;
-    gameWorldManager& gmWrMan = gameWorldManager::getInstance();
+    camera& cam = camera::getInstance();
+    gameWorldManager& gmWrld = gameWorldManager::getInstance();
+    vector <vector <tile>> viewPort;
     text txt;
-    vector<vector<tile>> screenVec;
     text date;
+    void updateViewPort();
 };
 
 #endif
